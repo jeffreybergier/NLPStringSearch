@@ -11,17 +11,18 @@ import Foundation
 
 struct Search {
 
-    static func japaneseToKatakana(_ input: String) -> String {
-        let input = input as NSString
+    typealias NormalizedLookup = (String, Range<String.Index>)
+
+    static func japaneseToKatakana(_ input: String) -> [NormalizedLookup] {
         return self.japaneseConvert(input: input, transform: kCFStringTransformLatinKatakana)
     }
 
-    static func japaneseToLatin(_ input: String) -> String {
-        let input = input as NSString
+    static func japaneseToLatin(_ input: String) -> [NormalizedLookup] {
         return self.japaneseConvert(input: input, transform: kCFStringTransformToLatin)
     }
 
-    private static func japaneseConvert(input: NSString, transform: CFString) -> String {
+    private static func japaneseConvert(input _input: String, transform: CFString) -> [NormalizedLookup] {
+        let input = _input as NSString
         let range = CFRange(location: 0, length: input.length)
         let locale = CFLocaleCreate(kCFAllocatorDefault, CFLocaleIdentifier("ja_JP" as CFString))!
         let tokenizer = CFStringTokenizerCreate(kCFAllocatorDefault,
@@ -29,21 +30,27 @@ struct Search {
                                                 range,
                                                 kCFStringTokenizerUnitWordBoundary,
                                                 locale)
-        var result = ""
+        var result: [NormalizedLookup] = []
         var tokenType = CFStringTokenizerGoToTokenAtIndex(tokenizer, 0)
         while tokenType.rawValue != 0 {
+            // this range code is dangerous because NSString and Swift.String
+            // have different concepts of what a character is.
+            // Refer to: https://talk.objc.io/episodes/S01E80-swift-string-vs-nsstring
+            let _cr = CFStringTokenizerGetCurrentTokenRange(tokenizer)
+            let objcRange = NSRange(location: _cr.location, length: _cr.length)
+            let swiftRange = Range(objcRange, in: _input)!
             let transcribed = CFStringTokenizerCopyCurrentTokenAttribute(
                 tokenizer,
                 kCFStringTokenizerAttributeLatinTranscription
                 ) as? NSMutableString
             if let transcribed = transcribed {
                 CFStringTransform(transcribed, nil, transform, false)
-                result += transcribed as String
+                let lookup = ((transcribed as String), swiftRange)
+                result.append(lookup)
             } else {
-                let _currentRange = CFStringTokenizerGetCurrentTokenRange(tokenizer)
-                let currentRange = NSRange(location: _currentRange.location, length: _currentRange.length)
-                let originalString = input.substring(with: currentRange)
-                result += originalString
+                let originalString = input.substring(with: objcRange)
+                let lookup = (originalString, swiftRange)
+                result.append(lookup)
             }
             tokenType = CFStringTokenizerAdvanceToNextToken(tokenizer)
         }

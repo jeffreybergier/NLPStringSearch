@@ -20,32 +20,56 @@ class NLPStringSearchTests: XCTestCase {
     理由は、感染の拡大を防ぐためとしています。
     関西電力では、定期検査の開始時期については、今後、作業を請け負う協力会社などと調整したうえで決めるとしています。
     """
-
-    let outputKatakana = """
-    カンサイデンリョクハ､フクイケンニアルオオイゲンシリョクハツデンショ3ゴウキノテイキケンサノサギョウカイシヲシンガタコロナウイルスノカンセンボウシノタメ2カゲツカラ3カゲツテイド､ノバスコトヲキメマシタ｡
-    オヨソネン1カイノヒンドデジッシスルコトガキマッテイルゲンパツノテイキケンサデハゼンコクカラサギョウインガアツマリマス｡
-    フクイケンニアルオオイゲンパツ3ゴウキデモコンゲツ8カカラノケンサニケンガイカラ900ニンゼンゴノサギョウインガアツマルミトオシデ､フクイケンノスギモトチジハセンゲツ､シンガタコロナウイルスノカンセンボウシノタメ､フクイニクルマエニサギョウインハ2シュウカンノジタクタイキヲカンサイデンリョクニモトメルナドシテイマシタ｡
-    コレニカンシテ､オオイゲンパツノブンノウイッセイショチョウガ1カ､ジモトノフクイケンオオイマチヲオトズレ､テイキケンサノサギョウカイシヲ2カゲツカラ3カゲツテイドノバスホウシンヲツタエマシタ｡
-    リユウハ､カンセンノカクダイヲフセグタメトシテイマス｡
-    カンサイデンリョクデハ､テイキケンサノカイシジキニツイテハ､コンゴ､サギョウヲウケオウキョウリョクカイシャナドトチョウセイシタウエデキメルトシテイマス｡
-    """
-    let outputLatin = """
-    kansaidenryokuha､fukuikenniaruooigenshiryokuhatsudensho3goukinoteikikensanosagyoukaishiwoshingatakoronauirusunokansenboushinotame2kagetsukara3kagetsuteido､nobasukotowokimemashita｡
-    oyosonen1kainohindodejisshisurukotogakima~tsuteirugenpatsunoteikikensadehazenkokukarasagyouingaatsumarimasu｡
-    fukuikenniaruooigenpatsu3goukidemokongetsu8kakaranokensanikengaikara900ninzengonosagyouingaatsumarumitooshide､fukuikennosugimotochijihasengetsu､shingatakoronauirusunokansenboushinotame､fukuinikurumaenisagyouinha2shuukannojitakutaikiwokansaidenryokunimotomerunadoshiteimashita｡
-    korenikanshite､ooigenpatsunobunnouisseishochouga1ka､jimotonofukuikenooimachiwootozure､teikikensanosagyoukaishiwo2kagetsukara3kagetsuteidonobasuhoushinwotsutaemashita｡
-    riyuuha､kansennokakudaiwofusegutametoshiteimasu｡
-    kansaidenryokudeha､teikikensanokaishijikinitsuiteha､kongo､sagyouwoukeoukyouryokukaishanadotochouseishitauedekimerutoshiteimasu｡
-    """
     
     func test_japaneseToLatin() {
-        let outputLatin = Search.japaneseToLatin(self.inputString)
-        XCTAssertEqual(outputLatin, self.outputLatin)
+        let input = self.inputString
+        let output = Search.japaneseToLatin(input)
+        XCTAssertEqual(output.count, 246)
+        _ = {
+            let location = output.first!
+            XCTAssertEqual(location.0, "kansai")
+            XCTAssertEqual(input[location.1], "関西")
+        }()
+        _ = {
+            let location = output[50]
+            XCTAssertEqual(location.0, "no")
+            XCTAssertEqual(input[location.1], "の")
+        }()
+        _ = {
+            let location = output[102]
+            XCTAssertEqual(location.0, "atsumaru")
+            XCTAssertEqual(input[location.1], "集まる")
+        }()
+        _ = {
+            let location = output[157]
+            XCTAssertEqual(location.0, "bun")
+            XCTAssertEqual(input[location.1], "文")
+        }()
     }
 
     func test_japaneseToKatakana() {
-        let outputKatakana = Search.japaneseToKatakana(self.inputString)
-        XCTAssertEqual(outputKatakana, self.outputKatakana)
+        let input = self.inputString
+        let output = Search.japaneseToKatakana(input)
+        XCTAssertEqual(output.count, 246)
+        _ = {
+            let location = output.first!
+            XCTAssertEqual(location.0, "カンサイ")
+            XCTAssertEqual(input[location.1], "関西")
+        }()
+        _ = {
+            let location = output[50]
+            XCTAssertEqual(location.0, "ノ")
+            XCTAssertEqual(input[location.1], "の")
+        }()
+        _ = {
+            let location = output[102]
+            XCTAssertEqual(location.0, "アツマル")
+            XCTAssertEqual(input[location.1], "集まる")
+        }()
+        _ = {
+            let location = output[157]
+            XCTAssertEqual(location.0, "ブン")
+            XCTAssertEqual(input[location.1], "文")
+        }()
     }
-
 }
