@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5034E254245D1B76009BDA52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E253245D1B76009BDA52 /* AppDelegate.swift */; };
+		5034E256245D1B7E009BDA52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5034E255245D1B7E009BDA52 /* Assets.xcassets */; };
+		5034E259245D1B7E009BDA52 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5034E257245D1B7E009BDA52 /* MainMenu.xib */; };
+		5034E265245D1B7E009BDA52 /* NLPStringSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E264245D1B7E009BDA52 /* NLPStringSearchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5034E261245D1B7E009BDA52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5034E248245D1B76009BDA52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5034E24F245D1B76009BDA52;
+			remoteInfo = NLPStringSearch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5034E250245D1B76009BDA52 /* NLPStringSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NLPStringSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5034E253245D1B76009BDA52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5034E255245D1B7E009BDA52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5034E258245D1B7E009BDA52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5034E25A245D1B7E009BDA52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5034E25B245D1B7E009BDA52 /* NLPStringSearch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NLPStringSearch.entitlements; sourceTree = "<group>"; };
+		5034E260245D1B7E009BDA52 /* NLPStringSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NLPStringSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5034E264245D1B7E009BDA52 /* NLPStringSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPStringSearchTests.swift; sourceTree = "<group>"; };
+		5034E266245D1B7E009BDA52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5034E24D245D1B76009BDA52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5034E25D245D1B7E009BDA52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5034E247245D1B76009BDA52 = {
+			isa = PBXGroup;
+			children = (
+				5034E252245D1B76009BDA52 /* NLPStringSearch */,
+				5034E263245D1B7E009BDA52 /* NLPStringSearchTests */,
+				5034E251245D1B76009BDA52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5034E251245D1B76009BDA52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5034E250245D1B76009BDA52 /* NLPStringSearch.app */,
+				5034E260245D1B7E009BDA52 /* NLPStringSearchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5034E252245D1B76009BDA52 /* NLPStringSearch */ = {
+			isa = PBXGroup;
+			children = (
+				5034E253245D1B76009BDA52 /* AppDelegate.swift */,
+				5034E255245D1B7E009BDA52 /* Assets.xcassets */,
+				5034E257245D1B7E009BDA52 /* MainMenu.xib */,
+				5034E25A245D1B7E009BDA52 /* Info.plist */,
+				5034E25B245D1B7E009BDA52 /* NLPStringSearch.entitlements */,
+			);
+			path = NLPStringSearch;
+			sourceTree = "<group>";
+		};
+		5034E263245D1B7E009BDA52 /* NLPStringSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				5034E264245D1B7E009BDA52 /* NLPStringSearchTests.swift */,
+				5034E266245D1B7E009BDA52 /* Info.plist */,
+			);
+			path = NLPStringSearchTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5034E24F245D1B76009BDA52 /* NLPStringSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5034E269245D1B7E009BDA52 /* Build configuration list for PBXNativeTarget "NLPStringSearch" */;
+			buildPhases = (
+				5034E24C245D1B76009BDA52 /* Sources */,
+				5034E24D245D1B76009BDA52 /* Frameworks */,
+				5034E24E245D1B76009BDA52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NLPStringSearch;
+			productName = NLPStringSearch;
+			productReference = 5034E250245D1B76009BDA52 /* NLPStringSearch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5034E25F245D1B7E009BDA52 /* NLPStringSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5034E26C245D1B7E009BDA52 /* Build configuration list for PBXNativeTarget "NLPStringSearchTests" */;
+			buildPhases = (
+				5034E25C245D1B7E009BDA52 /* Sources */,
+				5034E25D245D1B7E009BDA52 /* Frameworks */,
+				5034E25E245D1B7E009BDA52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5034E262245D1B7E009BDA52 /* PBXTargetDependency */,
+			);
+			name = NLPStringSearchTests;
+			productName = NLPStringSearchTests;
+			productReference = 5034E260245D1B7E009BDA52 /* NLPStringSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5034E248245D1B76009BDA52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Jeffrey Bergier";
+				TargetAttributes = {
+					5034E24F245D1B76009BDA52 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					5034E25F245D1B7E009BDA52 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 5034E24F245D1B76009BDA52;
+					};
+				};
+			};
+			buildConfigurationList = 5034E24B245D1B76009BDA52 /* Build configuration list for PBXProject "NLPStringSearch" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5034E247245D1B76009BDA52;
+			productRefGroup = 5034E251245D1B76009BDA52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5034E24F245D1B76009BDA52 /* NLPStringSearch */,
+				5034E25F245D1B7E009BDA52 /* NLPStringSearchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5034E24E245D1B76009BDA52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5034E256245D1B7E009BDA52 /* Assets.xcassets in Resources */,
+				5034E259245D1B7E009BDA52 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5034E25E245D1B7E009BDA52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5034E24C245D1B76009BDA52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5034E254245D1B76009BDA52 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5034E25C245D1B7E009BDA52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5034E265245D1B7E009BDA52 /* NLPStringSearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5034E262245D1B7E009BDA52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5034E24F245D1B76009BDA52 /* NLPStringSearch */;
+			targetProxy = 5034E261245D1B7E009BDA52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5034E257245D1B7E009BDA52 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5034E258245D1B7E009BDA52 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5034E267245D1B7E009BDA52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5034E268245D1B7E009BDA52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5034E26A245D1B7E009BDA52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NLPStringSearch/NLPStringSearch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V6ESYGU6CV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = NLPStringSearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.saturdayapps.NLPStringSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5034E26B245D1B7E009BDA52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NLPStringSearch/NLPStringSearch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V6ESYGU6CV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = NLPStringSearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.saturdayapps.NLPStringSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5034E26D245D1B7E009BDA52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V6ESYGU6CV;
+				INFOPLIST_FILE = NLPStringSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saturdayapps.NLPStringSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NLPStringSearch.app/Contents/MacOS/NLPStringSearch";
+			};
+			name = Debug;
+		};
+		5034E26E245D1B7E009BDA52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V6ESYGU6CV;
+				INFOPLIST_FILE = NLPStringSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saturdayapps.NLPStringSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NLPStringSearch.app/Contents/MacOS/NLPStringSearch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5034E24B245D1B76009BDA52 /* Build configuration list for PBXProject "NLPStringSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5034E267245D1B7E009BDA52 /* Debug */,
+				5034E268245D1B7E009BDA52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5034E269245D1B7E009BDA52 /* Build configuration list for PBXNativeTarget "NLPStringSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5034E26A245D1B7E009BDA52 /* Debug */,
+				5034E26B245D1B7E009BDA52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5034E26C245D1B7E009BDA52 /* Build configuration list for PBXNativeTarget "NLPStringSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5034E26D245D1B7E009BDA52 /* Debug */,
+				5034E26E245D1B7E009BDA52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5034E248245D1B76009BDA52 /* Project object */;
+}
