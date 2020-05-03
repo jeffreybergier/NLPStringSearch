@@ -27,6 +27,12 @@ class EnglishNormalizerTests: XCTestCase {
 
     func test_search() {
         _ = {
+            XCTAssertEqual(self.trie.allInsertions.count, 175)
+            XCTAssertEqual(self.trie.allInsertions[0], "boris johnson")
+            XCTAssertEqual(self.trie.allInsertions[52], "desire")
+            XCTAssertEqual(self.trie.allInsertions[100], "ms symonds")
+        }()
+        _ = {
             let search = self.trie.markers(for: "boris johnson")
             XCTAssertEqual(search.count, 1)
             XCTAssertEqual(inputString[search.first!], "Boris Johnson")
@@ -59,6 +65,12 @@ class JapaneseNormalizerTests: XCTestCase {
     lazy var trie: StringRangeTrie = SearchNormalizer.japanese(text: inputString)
 
     func test_search() {
+        _ = {
+            XCTAssertEqual(self.trie.allInsertions.count, 223)
+            XCTAssertEqual(self.trie.allInsertions[0], "kansai")
+            XCTAssertEqual(self.trie.allInsertions[50], "suru")
+            XCTAssertEqual(self.trie.allInsertions[102], "sugimoto")
+        }()
         _ = {
             let search = self.trie.markers(for: "kansai")
             XCTAssertEqual(search.count, 3)

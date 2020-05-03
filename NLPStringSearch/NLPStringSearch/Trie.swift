@@ -7,6 +7,7 @@
 //
 
 class Trie<T: Hashable, U: Hashable> {
+    private(set) var allInsertions: [[T]] = []
     private let head: Node
     init(headValue: T) {
         self.head = Node(value: headValue)
@@ -32,6 +33,7 @@ extension Trie {
 extension Trie {
     
     func insert(_ values: [T], marker: U) {
+        self.allInsertions.append(values)
         var current = self.head
         for value in values {
             var next = current[value]

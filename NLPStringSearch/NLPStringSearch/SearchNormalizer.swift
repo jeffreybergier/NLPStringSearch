@@ -45,7 +45,9 @@ extension SearchNormalizer {
         let tagger = NLTagger(tagSchemes: [.lexicalClass, .nameType])
         let options: NLTagger.Options = [.omitPunctuation, .omitWhitespace, .joinNames, .omitOther]
         tagger.string = input
-        tagger.enumerateTags(in: input.startIndex..<input.endIndex, unit: .word, scheme: .lexicalClass, options: options)
+        tagger.enumerateTags(in: input.startIndex..<input.endIndex,
+                             unit: .word, scheme: .lexicalClass,
+                             options: options)
         { tag, range -> Bool in
             let word = input[range]
             let normalized = word.lowercased()

@@ -15,4 +15,7 @@ class StringRangeTrie {
     func markers(for search: String) -> Set<Marker> {
         return self.trie.markers(for: Array(search))
     }
+    var allInsertions: LazyMapSequence<LazySequence<[[Character]]>.Elements, String> {
+        return self.trie.allInsertions.lazy.map({ String($0) })
+    }
 }

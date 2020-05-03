@@ -24,6 +24,11 @@ class TrieTests: XCTestCase {
 
     func test_search() {
         _ = {
+            XCTAssertEqual(self.trie.allInsertions.count, 6)
+            XCTAssertEqual(self.trie.allInsertions[1], ["h","e","l","l","o"])
+            XCTAssertEqual(self.trie.allInsertions.last!, ["カ","ン","パ","イ"])
+        }()
+        _ = {
             let search = self.trie.markers(for: ["h"])
             XCTAssertEqual(search, Set([1, 2, 3]))
         }()
