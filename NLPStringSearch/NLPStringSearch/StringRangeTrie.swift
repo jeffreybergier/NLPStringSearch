@@ -6,10 +6,10 @@
 //  Copyright © 2020 Jeffrey Bergier. All rights reserved.
 //
 
-struct StringRangeTrie {
+class StringRangeTrie {
     typealias Marker = Range<String.Index>
     private let trie = Trie<Character, Marker>(headValue: "•")
-    mutating func insert(_ values: String, marker: Marker) {
+    func insert(_ values: String, marker: Marker) {
         self.trie.insert(Array(values), marker: marker)
     }
     func markers(for search: String) -> Set<Marker> {

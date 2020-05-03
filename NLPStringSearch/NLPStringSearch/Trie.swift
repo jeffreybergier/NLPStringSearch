@@ -50,7 +50,7 @@ extension Trie {
             // base case, if there are no children, just return the search
             guard !node.children.isEmpty else { return node.markers }
             // otherwise dive deeper
-            var output: Set<U> = []
+            var output: Set<U> = node.markers
             for (nextValue, nextNode) in node.children {
                 let nextSearch = search + [nextValue]
                 let result = dd(nextSearch, nextNode)
