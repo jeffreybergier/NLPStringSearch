@@ -33,18 +33,20 @@ class SearchWindowController: NSWindowController {
         let normalAttribs: [NSAttributedString.Key : Any] = [
             .font : NSFont.systemFont(ofSize: 16)
         ]
-        let text = NSMutableAttributedString(string: self.searchableText, attributes: normalAttribs)
-        defer {
-            self.textView.textStorage!.setAttributedString(text)
-        }
-        guard let searchTerm = searchedTextTrie.allInsertions.first else { return }
-        let markers = self.searchableTextTrie.markers(for: searchTerm)
         let searchedAttribs: [NSAttributedString.Key : Any] = [
             .backgroundColor : NSColor.yellow,
             .font : NSFont.boldSystemFont(ofSize: 16)
         ]
-        for range in markers {
-            text.setAttributes(searchedAttribs, range: NSRange(range, in: self.searchableText))
+        let text = NSMutableAttributedString(string: self.searchableText, attributes: normalAttribs)
+        defer {
+            self.textView.textStorage!.setAttributedString(text)
+        }
+        let searchTerms = searchedTextTrie.allInsertions
+        for searchTerm in searchTerms {
+            let markers = self.searchableTextTrie.markers(for: searchTerm)
+            for range in markers {
+                text.setAttributes(searchedAttribs, range: NSRange(range, in: self.searchableText))
+            }
         }
     }
 }
