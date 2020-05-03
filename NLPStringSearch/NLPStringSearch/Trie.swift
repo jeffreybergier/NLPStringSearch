@@ -58,7 +58,6 @@ extension Trie {
             }
             return output
         }
-
         // nearest node: finds the deepest node possible given search
         func nn(_ search: [T]) -> Node? {
             var node = self.head

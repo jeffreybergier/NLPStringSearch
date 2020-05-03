@@ -14,6 +14,7 @@
 		5034E270245D1C76009BDA52 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E26F245D1C76009BDA52 /* Search.swift */; };
 		5034E274245E47EE009BDA52 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E273245E47EE009BDA52 /* Trie.swift */; };
 		5034E276245E4E5A009BDA52 /* TrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E275245E4E5A009BDA52 /* TrieTests.swift */; };
+		5034E278245E67FD009BDA52 /* StringRangeTrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E277245E67FD009BDA52 /* StringRangeTrie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		5034E271245D7FED009BDA52 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		5034E273245E47EE009BDA52 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		5034E275245E4E5A009BDA52 /* TrieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieTests.swift; sourceTree = "<group>"; };
+		5034E277245E67FD009BDA52 /* StringRangeTrie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRangeTrie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				5034E253245D1B76009BDA52 /* AppDelegate.swift */,
 				5034E26F245D1C76009BDA52 /* Search.swift */,
 				5034E273245E47EE009BDA52 /* Trie.swift */,
+				5034E277245E67FD009BDA52 /* StringRangeTrie.swift */,
 				5034E255245D1B7E009BDA52 /* Assets.xcassets */,
 				5034E257245D1B7E009BDA52 /* MainMenu.xib */,
 				5034E25A245D1B7E009BDA52 /* Info.plist */,
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5034E278245E67FD009BDA52 /* StringRangeTrie.swift in Sources */,
 				5034E274245E47EE009BDA52 /* Trie.swift in Sources */,
 				5034E254245D1B76009BDA52 /* AppDelegate.swift in Sources */,
 				5034E270245D1C76009BDA52 /* Search.swift in Sources */,
