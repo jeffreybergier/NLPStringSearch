@@ -11,11 +11,10 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var window: NSWindow!
-
+    private var searchWC: SearchWindowController = .newWC()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        self.searchWC.showWindow(nil)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
