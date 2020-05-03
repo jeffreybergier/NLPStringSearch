@@ -25,7 +25,7 @@ class EnglishNormalizerTests: XCTestCase {
 
     lazy var trie: StringRangeTrie = SearchNormalizer.latin(text: inputString)
 
-    func test_borisSearch() {
+    func test_search() {
         _ = {
             let search = self.trie.markers(for: "boris johnson")
             XCTAssertEqual(search.count, 1)
@@ -42,5 +42,57 @@ class EnglishNormalizerTests: XCTestCase {
             XCTAssertEqual(search.count, 11)
         }()
     }
+}
 
+class JapaneseNormalizerTests: XCTestCase {
+
+    // Article Text: https://www3.nhk.or.jp/news/html/20200501/k10012415011000.html
+    let inputString = """
+        関西電力は、福井県にある大飯原子力発電所３号機の定期検査の作業開始を新型コロナウイルスの感染防止のため２か月から３か月程度、延ばすことを決めました。👨‍👩‍👦
+        およそ年１回の頻度で実施することが決まっている原発の定期検査では全国から作業員が集まります。
+        福井県にある大飯原発３号機でも今月８日からの検査に県外から900人前後の作業員が集まる見通しで、福井県の杉本知事は先月、新型コロナウイルスの感染防止のため、福井に来る前に作業員は２週間の自宅待機を関西電力に求めるなどしていました。
+        これに関して、大飯原発の文能一成所長が１日、地元の福井県おおい町を訪れ、定期検査の作業開始を２か月から３か月程度延ばす方針を伝えました。
+        理由は、感染の拡大を防ぐためとしています。
+        関西電力では、定期検査の開始時期については、今後、作業を請け負う協力会社などと調整したうえで決めるとしています。
+        """
+
+    lazy var trie: StringRangeTrie = SearchNormalizer.japanese(text: inputString)
+
+    func test_search() {
+        _ = {
+            let search = self.trie.markers(for: "kansai")
+            XCTAssertEqual(search.count, 3)
+            for range in search {
+                XCTAssertEqual(self.inputString[range], "関西")
+            }
+        }()
+        _ = {
+            let search = self.trie.markers(for: "sugimoto")
+            XCTAssertEqual(search.count, 1)
+            for range in search {
+                XCTAssertEqual(self.inputString[range], "杉本")
+            }
+        }()
+        _ = {
+            let search = self.trie.markers(for: "machi")
+            XCTAssertEqual(search.count, 1)
+            for range in search {
+                XCTAssertEqual(self.inputString[range], "町")
+            }
+        }()
+        _ = {
+            let search = self.trie.markers(for: "koro")
+            XCTAssertEqual(search.count, 2)
+            for range in search {
+                XCTAssertEqual(self.inputString[range], "コロナ")
+            }
+        }()
+        _ = {
+            let search = self.trie.markers(for: "mi")
+            XCTAssertEqual(search.count, 1)
+            for range in search {
+                XCTAssertEqual(self.inputString[range], "見通し")
+            }
+        }()
+    }
 }
