@@ -28,7 +28,7 @@ struct Search {
         let tokenizer = CFStringTokenizerCreate(kCFAllocatorDefault,
                                                 input as CFString,
                                                 range,
-                                                kCFStringTokenizerUnitWordBoundary,
+                                                kCFStringTokenizerUnitWord,
                                                 locale)
         var result: [NormalizedLookup] = []
         var tokenType = CFStringTokenizerGoToTokenAtIndex(tokenizer, 0)

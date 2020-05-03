@@ -24,52 +24,52 @@ class NLPStringSearchTests: XCTestCase {
     func test_japaneseToLatin() {
         let input = self.inputString
         let output = Search.japaneseToLatin(input)
-        XCTAssertEqual(output.count, 246)
+        XCTAssertEqual(output.count, 223)
         _ = {
             let location = output.first!
             XCTAssertEqual(location.0, "kansai")
             XCTAssertEqual(input[location.1], "関西")
         }()
         _ = {
-            let location = output[50]
-            XCTAssertEqual(location.0, "no")
-            XCTAssertEqual(input[location.1], "の")
+            let location = output[45]
+            XCTAssertEqual(location.0, "kai")
+            XCTAssertEqual(input[location.1], "回")
         }()
         _ = {
             let location = output[102]
-            XCTAssertEqual(location.0, "atsumaru")
-            XCTAssertEqual(input[location.1], "集まる")
+            XCTAssertEqual(location.0, "sugimoto")
+            XCTAssertEqual(input[location.1], "杉本")
         }()
         _ = {
             let location = output[157]
-            XCTAssertEqual(location.0, "bun")
-            XCTAssertEqual(input[location.1], "文")
+            XCTAssertEqual(location.0, "machi")
+            XCTAssertEqual(input[location.1], "町")
         }()
     }
 
     func test_japaneseToKatakana() {
         let input = self.inputString
         let output = Search.japaneseToKatakana(input)
-        XCTAssertEqual(output.count, 246)
+        XCTAssertEqual(output.count, 223)
         _ = {
             let location = output.first!
             XCTAssertEqual(location.0, "カンサイ")
             XCTAssertEqual(input[location.1], "関西")
         }()
         _ = {
-            let location = output[50]
-            XCTAssertEqual(location.0, "ノ")
-            XCTAssertEqual(input[location.1], "の")
+            let location = output[45]
+            XCTAssertEqual(location.0, "カイ")
+            XCTAssertEqual(input[location.1], "回")
         }()
         _ = {
             let location = output[102]
-            XCTAssertEqual(location.0, "アツマル")
-            XCTAssertEqual(input[location.1], "集まる")
+            XCTAssertEqual(location.0, "スギモト")
+            XCTAssertEqual(input[location.1], "杉本")
         }()
         _ = {
             let location = output[157]
-            XCTAssertEqual(location.0, "ブン")
-            XCTAssertEqual(input[location.1], "文")
+            XCTAssertEqual(location.0, "マチ")
+            XCTAssertEqual(input[location.1], "町")
         }()
     }
 }
