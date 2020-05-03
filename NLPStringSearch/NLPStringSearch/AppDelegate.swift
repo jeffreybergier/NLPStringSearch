@@ -11,10 +11,12 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    private var searchWC: SearchWindowController = .newWC()
+    private var japaneseWC: NSWindowController = JapaneseSearchWindowController.newWC()
+    private var latinWC: NSWindowController = LatinSearchWindowController.newWC()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.searchWC.showWindow(nil)
+        self.japaneseWC.showWindow(nil)
+        self.latinWC.showWindow(nil)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
