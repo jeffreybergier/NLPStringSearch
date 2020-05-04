@@ -120,3 +120,86 @@ let japanese1 = """
 フリードリヒ・シラー（1759年 - 1805年）詩人。1783年にシュヴィーバーディンゲンの「ツーム・レーヴェン」（直訳: 獅子亭）に宿泊した。この旅館にはカール・マリア・フォン・ウェーバー（1786年 - 1826年、作曲家）やヨハン・フリードリヒ・フラッティヒ（1713年 - 1797年、牧師）もしばしば逗留した。
 マティアス・ザマー（1967年 - ）サッカー選手。VfBシュトゥットガルト監督時代の2004年から2005年にシュヴィーバーディンゲンに住んだ。
 """
+
+// https://de.wikipedia.org/wiki/Schwieberdingen
+let latin1 = """
+Gemarkung der Gemeinde
+Schwieberdingen liegt im südwestlichen Neckarbecken, einer lössbedeckten und durch Flusstäler eingeschnittenen Hochfläche im Zentrum Baden-Württembergs, und befindet sich etwas südlich des 49. Breitengrades.
+
+Die Landschaft um Schwieberdingen zeigt eine große Verschiedenartigkeit an Bodenformen, die sich auch an den Flurnamen mit den Endungen -berg, -grund oder -tal erkennen lässt. Durch den Ort fließt der kleine Fluss Glems, der sich hier in den Muschelkalk des sonst nur leicht welligen Geländes des Langen Feldes und des Strohgäus eingegraben hat. Im Glemstal selbst finden sich größere zusammenhängende Auenbereiche, die periodisch überflutet werden.
+
+Etwa 35 % der Schwieberdinger Bodenfläche besteht aus Siedlungs- und Verkehrsfläche, rund 62 % aus landwirtschaftlichen Nutzflächen. Der Rest besteht aus Wald und Wasserflächen.
+
+Der höchste Punkt der Gemarkung, die Katharinenlinde, liegt bei 351 m ü. NN, der tiefste an der Gemarkungsgrenze im unteren Glemstal bei 238 m ü. NN.
+
+Nachbargemeinden[Bearbeiten | Quelltext bearbeiten]
+Fünf Städte und Gemeinden grenzen an die Gemeinde Schwieberdingen. Im Uhrzeigersinn beginnend im Norden sind dies Markgröningen, Möglingen, Korntal-Münchingen, Hemmingen und Eberdingen.
+
+Klima[Bearbeiten | Quelltext bearbeiten]
+Schwieberdingen ist gekennzeichnet durch sein mildes Klima, das durch seine Lage im südwestlichen Neckarbecken – abgeschirmt durch den Schwarzwald im Westen, die Schwäbische Alb im Süden, den Schwäbisch-Fränkischen Wald im Osten und das Strom- und Heuchelberggebiet im Nordwesten – geprägt ist. Neben dem Oberrheintal ist der Großraum Stuttgart – zu dem Schwieberdingen gehört – eines der wärmsten Gebiete Deutschlands. Der wärmste Monat ist der Juli mit einer mittleren monatlichen Temperatur von 18,8 °C, während der Januar als kältester Monat durchschnittlich 1,3 °C aufweist. Neben den milden Temperaturen sind die lange Sonnenscheindauer, die geringen Niederschläge und niedrige Windgeschwindigkeiten bei großer Häufigkeit von Windstille charakteristisch. Die mittlere jährliche Niederschlagsmenge in Schwieberdingen liegt bei 679 mm. Die Hauptniederschläge fallen, wie in Süddeutschland üblich, im Sommer, wobei der Juni und der August die höchsten Niederschlagsmengen aufweisen. Die Niederschlagsarmut in der Region hat dazu geführt, dass schon früh eine Fremdwasserversorgung notwendig wurde, woraufhin die Bodenseewasserversorgung ab 1954 aufgebaut wurde.
+
+Flächenaufteilung[Bearbeiten | Quelltext bearbeiten]
+
+Nach Daten des Statistischen Landesamtes, Stand 2014.[2]
+
+Geschichte[Bearbeiten | Quelltext bearbeiten]
+Vorgeschichte[Bearbeiten | Quelltext bearbeiten]
+Die ersten nachweisbaren Spuren einer Besiedelung auf der heutigen Gemarkung Schwieberdingen sind seit der Jungsteinzeit vorhanden. Der äußerst fruchtbare Boden und die Furt über die Glems zogen bereits ab 5000 v. Chr. erste Siedler an. Funde des Landesdenkmalamtes Baden-Württemberg belegen zwei Siedlungen. Die ältere – in Fachkreisen als Schwieberdinger Gruppe bezeichnet – ist zeitlich etwa im Jahre 4300 bis 4200 v. Chr. einzuordnen. Zu ihr gehört auch das in einem Hockergrab entdeckte Skelett einer jungen Frau, genannt Mathilde, die etwa 4000 v. Chr. gelebt hat. Die zweite Siedlung datiert in die Michelsberger Kultur und ist etwa 700 bis 800 Jahre jünger als die Schwieberdinger Gruppe.
+
+Von 85 n. Chr. an eroberten die Römer das Land von den Kelten und hinterließen ihre Spuren unter anderem aufgrund des Baus der durch den späteren Ort und über die Furt an der Glems führenden Römerstraße. Die alte Römerstraße, die auch das spätere Schwieberdingen über Jahrhunderte prägte, stellte in dieser Zeit die wichtigste Straße des Landes und eine Hauptverbindung zwischen Rhein und Donau dar. Genutzt wurde sie vor allem militärisch. So durchzogen beispielsweise der römische Kaiser Hadrian und seine Legionen zwischen den Jahren 117 und 138 das Gebiet. Neben der Römerstraße zeigen Reste römischer Gutshöfe – die an die intensive landwirtschaftliche Nutzung erinnern – und andere archäologische Funde weitere Spuren der römischen Besiedlung in den ersten nachchristlichen Jahrhunderten.
+
+Alamannische und fränkische Zeit[Bearbeiten | Quelltext bearbeiten]
+Im 3. Jahrhundert eroberten die Alamannen das römische Gebiet bis zum Rhein. Während dieser Zeit wurde möglicherweise um 260 n. Chr. der heutige Ort unter dem Namen Suidbert-ingen, der auf den alamannischen Sippenführer Suidbert zurückzuführen ist, gegründet. Nach dem Sieg der Franken über die Alamannen um 500 lag das Gebiet der späteren Markung Schwieberdingen an der Stammesgrenze zwischen den Alamannen im Südosten und den Franken im Nordwesten. Diese Grenze wurde nach der Christianisierung zugleich Bistumsgrenze zwischen dem fränkischen Bistum Speyer und dem alamannischen Bistum Konstanz. Die Lage Schwieberdingens am Schnittpunkt von Stammesgrenze und der Fernstraße sowie die Bedeutung der Furt für diesen von Flandern bis zum Schwarzen Meer und Italien so wichtigen Verkehrsweg lassen vermuten, dass das Dorf aus militärischen Erwägungen – zum Schutz der Furt – gegründet wurde.
+
+Verschiedene Bodenfunde auf der heutigen Markung Schwieberdingens zeigen, dass einst mehrere alamannische Siedlungen bestanden. So wurde zwischen 750 und 802 das im östlichen Teil der Gemarkung liegende und im 14. Jahrhundert abgegangene Dorf Vöhingen erstmals urkundlich erwähnt. Die Wüstung ist inzwischen im Jahre 2005 archäologisch gründlich untersucht worden.
+
+Erste schriftliche Erwähnung[Bearbeiten | Quelltext bearbeiten]
+Die bisher bekannte erste schriftliche Erwähnung Schwieberdingens erfolgte im Esslinger Urbar von 1304, in der zwei Morgen Ackerland versus Swiebertingen beschrieben werden. Im 14. Jahrhundert begannen die Grafen von Württemberg, ihre Herrschaft in der Region auszuweiten. So verkaufte am 18. Oktober 1321 auch Graf Bürgin der Jüngere von Hohenberg-Nagold den Kirchensatz zu Schwieberdingen an Graf Eberhard den Erlauchten von Württemberg. Neben den Grafen von Württemberg hatten unter anderem die Herren von Nippenburg, deren gleichnamiger Sitz etwas südlich des Ortes liegt und 1160 erstmals urkundlich genannt wurde, Besitz im Dorf.
+
+Unruhige Zeiten vom 16. bis 19. Jahrhundert[Bearbeiten | Quelltext bearbeiten]
+
+Schwieberdingen 1682, Forstlagerbuch von Andreas Kieser
+Im 16. und 17. Jahrhundert hatte Schwieberdingen schwer unter Kriegen und Krankheiten zu leiden. Dreimal kam die Pest über den Ort. Allein im August 1584 starben 88 Menschen an der Seuche. Schon bald darauf wurde die stark dezimierte Bevölkerung von neuen Schrecken heimgesucht. So wie sich Friedenszeiten durch den Durchzug von Handels- und Kaufleuten günstig auf den sich an der späteren Reichs-, Handels- und Heerstraße entlang ausgebreiteten Ort auswirkten, so brachten die in Kriegszeiten durchziehenden Heere auch Not und Elend. Der Dreißigjährige Krieg lichtete die Bevölkerung nochmals. Schwieberdingen wurde von Plünderungen und Brandschatzungen heimgesucht. Während dieser Zeit ist für neun Jahre kein einziger Eintrag im Kirchenbuch zu finden. Laut einer Inschrift in der Sakristei soll der Ort völlig verlassen gewesen sein. Wiederholte Einfälle französischer Truppen zwischen 1688 und 1707 sorgten für weitere Verwüstungen und wirtschaftliche Schäden. Im Jahr 1707, als es den Franzosen unter ihrem Anführer Marschall Villars erneut gelang, über den Rhein zu kommen, bezogen die französischen Truppen am 4. Juni 1707 in Schwieberdingen Quartier. Nach zweitägigen Verhandlungen erkaufte sich die württembergische Regierung für eine Million Gulden die Schonung des Landes, was in dem im Ort abgeschlossenen Schwieberdinger Vertrag dokumentiert wurde.
+
+Kurz vor Ende des 18. Jahrhunderts zogen wieder Truppen durch den Ort. Das Grabmal des gefallenen österreichischen Offiziers Heinrich von Parzer auf dem Friedhof bezeugt die Kämpfe zwischen österreichischen und französischen Truppen. Vermutlich sollte die österreichische Nachhut die Straße und den Glemsübergang sichern.
+
+Nicht nur Kriege forderten einen hohen Tribut von den Einwohnern der zum Oberamt Markgröningen gehörenden Gemeinde. Auch durch häufige Missernten und das Erbteilungsrecht verarmte die Landbevölkerung immer mehr. Hungersnöte und Arbeitslosigkeit trieben im 19. Jahrhundert viele Einwohner zur Auswanderung nach Polen, Ungarn und Amerika.
+
+Bei der Umsetzung der neuen Verwaltungsgliederung im 1806 gegründeten Königreich Württemberg wurde Schwieberdingen 1807 dem Oberamt Ludwigsburg zugeordnet.
+
+Vom Kaiserreich bis zum Zweiten Weltkrieg[Bearbeiten | Quelltext bearbeiten]
+Von der zweiten Hälfte des 19. Jahrhunderts an kam es im Ort zu bedeutenden Fortschritten der Technik. Im Jahre 1878 wurde die Wasserleitung errichtet. Zudem baute man eine Post- und Telegrafenstation auf. Um 1900 wurde die Hauptstraße durch den Ort gepflastert, auf der schon bald die ersten Automobile entlangfuhren. Im Jahr 1906 erhielt Schwieberdingen durch den Bau der Strohgäubahn eine direkte Eisenbahnverbindung. Im selben Jahr wurde der Ort mit elektrischem Licht versehen, wodurch die vormals verwendeten Petroleumlampen ausgedient hatten.
+
+Im Ersten Weltkrieg von 1914 bis 1918 fielen etwa 50 Schwieberdinger. Die Nachkriegszeit mit der Inflation bis 1923 sowie die Weltwirtschaftskrise von 1929 und der rapide Anstieg der Arbeitslosigkeit zog die Einwohner in den folgenden Jahren in Mitleidenschaft.
+
+Nach der Machtübernahme der Nationalsozialisten 1933 und Annahme des Ermächtigungsgesetzes wurde der Gemeinderat gleichgeschaltet. Der Bürgermeister Eugen Herrmann blieb jedoch im Amt. Organisationen der Arbeiterbewegung wie beispielsweise der Arbeitersportverein Schwieberdingen wurden verboten.
+
+Bei der Verwaltungsreform während der NS-Zeit in Württemberg gelangte Schwieberdingen 1938 zum neuen Landkreis Ludwigsburg.
+
+Durch die Kriegsereignisse im Zweiten Weltkrieg von 1939 bis 1945 verloren eine beträchtliche Anzahl Schwieberdinger Bürger ihr Leben. 71 Einwohner sind gefallen, 20 blieben vermisst. Trotz zahlreicher Luftangriffe gegen Ende des Krieges, die vor allem auf die am Sportplatz stationierte Funkanlage abzielten, erlitt der Ort selbst nur geringe Gebäudeschäden. Lediglich die 1928 gebaute Glemsbrücke wurde in den letzten Tagen des Zweiten Weltkrieges von der sich zurückziehenden Wehrmacht gesprengt. Am 21. April 1945 marschierte die 1. französische Armee von Westen her kommend ein, besetzte den Ort und rückte weiter in Richtung Ludwigsburg und Stuttgart vor. Kurze Zeit später war der Zweite Weltkrieg nach der Kapitulation des Deutschen Reichs beendet.
+
+Jüngere Geschichte[Bearbeiten | Quelltext bearbeiten]
+Da der Ort nach dem Zweiten Weltkrieg Teil der Amerikanischen Besatzungszone geworden war, gehörte er somit seit 1945 zum neu gegründeten Land Württemberg-Baden, das 1952 im jetzigen Bundesland Baden-Württemberg aufging.
+
+Nach dem Ende des Krieges zog eine große Anzahl von Heimatvertriebenen und Flüchtlingen nach Schwieberdingen. Der Ort veränderte sich erheblich. Aus dem vormals ländlich-bäuerlichen Dorf wurde eine moderne, gewerblich orientierte Gemeinde. Durch den wirtschaftlichen Aufschwung siedelten sich immer mehr Unternehmen in Schwieberdingen an. Das größte und finanziell bedeutendste Unternehmen ist seit 1963 die Robert Bosch GmbH. Die Einwohnerzahl entwickelte sich sprunghaft, so dass sich die Wohngebiete langsam den Gemarkungsgrenzen annähern. Im Jahr 2004 wurde die 10.000-Einwohner-Grenze überschritten. Heute hat die Gemeinde rund 11.000 Einwohner.
+
+
+vergrößern und Informationen zum Bild anzeigen
+Panorama von Schwieberdingen, Blickrichtung Südosten
+Religion[Bearbeiten | Quelltext bearbeiten]
+Die Gemeinde Schwieberdingen lag ursprünglich an der durch den Fluss Glems gebildeten Grenze der Bistümer Konstanz und Speyer. Der Ort selbst gehörte dem Bistum Speyer an. Wie in ganz Württemberg wurde auch in Schwieberdingen ab 1534 die Reformation eingeführt. Infolgedessen war der Ort über viele Jahrhunderte überwiegend protestantisch und die im 14. Jahrhundert erbaute Schwieberdinger Georgskirche wurde zur evangelischen Kirche des Ortes.
+
+Nach dem Zweiten Weltkrieg kamen durch die vielen Heimatvertriebenen aus den Ostgebieten die ersten Katholiken nach Schwieberdingen. Während 1945 nur zwei Prozent der Einwohner katholisch waren, erhöhte sich die Zahl der katholischen Gemeindemitglieder bis 1950 auf 369, was etwa 17 Prozent der Bevölkerung entsprach. Sie nahmen zunächst das Angebot der evangelischen Gemeinde an, ihre Gottesdienste in der Georgskirche zu feiern, bevor am 4. April 1964 die katholische Kirche St. Petrus und Paulus geweiht wurde.
+
+Neben den beiden großen Kirchen gibt es in Schwieberdingen auch die Neuapostolische Kirche.
+
+Ortsteile[Bearbeiten | Quelltext bearbeiten]
+Der im Nordwesten der Schwieberdinger Gemarkung liegende Hardthof bildet zusammen mit dem Schönbühlhof einen Weiler. Die Gründung des damaligen Hart Hof durch zwei aus Schwieberdingen stammende Familien im Jahr 1760 ist in Stein gehauen überliefert. Etwas jünger ist der angrenzende Schönbühlhof, der 1770 von drei aus Markgröningen kommenden Familien gegründet wurde.
+
+
+vergrößern und Informationen zum Bild anzeigen
+Panorama von Schwieberdingen, Blickrichtung Nordwesten
+Eine Besonderheit ist die gemeinsame Verwaltung des Hardt- und Schönbühlhofes, da mitten durch den Ort mit etwa 300 Einwohnern, teilweise sogar durch einige Häuser, die Gemarkungsgrenze zwischen Schwieberdingen und Markgröningen verläuft.
+
+Als Interessenvertreter und Fürsprecher wählen alle volljährigen Einwohner des Ortes alle acht Jahre aus ihrer Mitte einen „Anwalt“. Dieser Anwalt, der bis 1991 auf Lebenszeit gewählt wurde, vertritt die Interessen des Weilers gegenüber seinen beiden Muttergemeinden. In dem seit 1797 existierenden „Protokollbuch“ schreiben die amtierenden Anwälte die Beschlüsse, Vereinbarungen und Probleme des Ortes nieder. In der früheren Gemeindeordnung hatten die Anwälte zudem einen kommunalrechtlichen Status. Sie wurden gewählt, mussten Versammlungen abhalten und waren im Gemeinderat vertreten. In der jetzt gültigen Gemeindeordnung gibt es offiziell keine Anwälte mehr. Auf dem Hardt- und Schönbühlhof wurde die Funktion jedoch außerhalb der Rechtsgrundlage weiterhin beibehalten.
+"""
