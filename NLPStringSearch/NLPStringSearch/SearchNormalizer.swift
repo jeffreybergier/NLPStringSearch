@@ -15,11 +15,12 @@ extension SearchNormalizer {
     /*
     static func japanese(text input: String) -> StringRangeTrie {
         let trie = StringRangeTrie()
-        let tagger = NLTagger(tagSchemes: [.lexicalClass, .nameType])
-        let options: NLTagger.Options = [.omitPunctuation, .omitWhitespace, .joinNames, .omitOther]
+        let tagger = NLTagger(tagSchemes: [.lexicalClass, .lemma])
+        let options: NLTagger.Options = [.omitPunctuation, .omitWhitespace, .omitOther]
         tagger.string = input
         tagger.enumerateTags(in: input.startIndex..<input.endIndex,
-                             unit: .word, scheme: .lexicalClass,
+                             unit: .word,
+                             scheme: .lemma,
                              options: options)
         { tag, range -> Bool in
             let word = String(input[range])
@@ -29,7 +30,8 @@ extension SearchNormalizer {
         }
         return trie
     }
-    */
+ */
+
     static func japanese(text _input: String) -> StringRangeTrie {
         let input = _input as NSString
         let range = CFRange(location: 0, length: input.length)
@@ -58,20 +60,28 @@ extension SearchNormalizer {
         return trie
     }
 
+    private static func normalizeLatin<S: StringProtocol>(_ input: S) -> String {
+        return input
+            .lowercased()
+            .applyingTransform(.stripDiacritics, reverse: false)!
+            .trimmingCharacters(in: .punctuationCharacters)
+    }
+
     static func latin(text input: String) -> StringRangeTrie {
         let trie = StringRangeTrie()
-        let tagger = NLTagger(tagSchemes: [.lexicalClass])
+        let tagger = NLTagger(tagSchemes: [.lemma])
         let options: NLTagger.Options = [.omitPunctuation, .omitWhitespace, .omitOther]
         tagger.string = input
         tagger.enumerateTags(in: input.startIndex..<input.endIndex,
-                             unit: .word, scheme: .lexicalClass,
+                             unit: .word,
+                             scheme: .lemma,
                              options: options)
         { tag, range -> Bool in
             let word = input[range]
-            let normalized = word.lowercased()
-                .applyingTransform(.stripDiacritics, reverse: false)!
-                .trimmingCharacters(in: .punctuationCharacters)
-            trie.insert(normalized, marker: range)
+            trie.insert(normalizeLatin(word), marker: range)
+            if let lemma = tag?.rawValue, lemma != word {
+                trie.insert(normalizeLatin(lemma), marker: range)
+            }
             return true
         }
         return trie
