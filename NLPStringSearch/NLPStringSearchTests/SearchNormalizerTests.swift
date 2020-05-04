@@ -27,15 +27,15 @@ class EnglishNormalizerTests: XCTestCase {
 
     func test_search() {
         _ = {
-            XCTAssertEqual(self.trie.allInsertions.count, 175)
-            XCTAssertEqual(self.trie.allInsertions[0], "boris johnson")
-            XCTAssertEqual(self.trie.allInsertions[52], "desire")
-            XCTAssertEqual(self.trie.allInsertions[100], "ms symonds")
+            XCTAssertEqual(self.trie.allInsertions.count, 185)
+            XCTAssertEqual(self.trie.allInsertions[0], "boris")
+            XCTAssertEqual(self.trie.allInsertions[52], "driven")
+            XCTAssertEqual(self.trie.allInsertions[101], "while")
         }()
         _ = {
-            let search = self.trie.markers(for: "boris johnson")
+            let search = self.trie.markers(for: "boris")
             XCTAssertEqual(search.count, 1)
-            XCTAssertEqual(inputString[search.first!], "Boris Johnson")
+            XCTAssertEqual(inputString[search.first!], "Boris")
         }()
         _ = {
             let search = self.trie.markers(for: "fiancee")

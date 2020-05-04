@@ -20,25 +20,26 @@ class TrieTests: XCTestCase {
         self.trie.insert(["g","o","o","g","l","e"], marker: 4)
         self.trie.insert(["カ","ン","サ","イ"], marker: 5)
         self.trie.insert(["カ","ン","パ","イ"], marker: 6)
+        self.trie.insert(["h","e","l","p","i","n","g"], marker: 7)
     }
 
     func test_search() {
         _ = {
-            XCTAssertEqual(self.trie.allInsertions.count, 6)
+            XCTAssertEqual(self.trie.allInsertions.count, 7)
             XCTAssertEqual(self.trie.allInsertions[1], ["h","e","l","l","o"])
-            XCTAssertEqual(self.trie.allInsertions.last!, ["カ","ン","パ","イ"])
+            XCTAssertEqual(self.trie.allInsertions.last!, ["h","e","l","p","i","n","g"])
         }()
         _ = {
             let search = self.trie.markers(for: ["h"])
-            XCTAssertEqual(search, Set([1, 2, 3]))
+            XCTAssertEqual(search, Set([1, 2, 3, 7]))
         }()
         _ = {
             let search = self.trie.markers(for: ["h","e","l"])
-            XCTAssertEqual(search, Set([1, 2, 3]))
+            XCTAssertEqual(search, Set([1, 2, 3, 7]))
         }()
         _ = {
             let search = self.trie.markers(for: ["h","e","l", "p"])
-            XCTAssertEqual(search, Set([3]))
+            XCTAssertEqual(search, Set([3,7]))
         }()
         _ = {
             let search = self.trie.markers(for: ["h","e","l","l","o"])
