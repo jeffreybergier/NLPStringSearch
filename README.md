@@ -30,7 +30,7 @@ A simple example of one type of complexity: Two totally different words with the
 - Candy is `ame` in Rōmaji, `あめ` in Hiragana, `アメ` in Katakana, and `飴` in Kanji.
     - The "standard" form is the Kanji version at the end.
 
-## Stage 1 (Current Stage)
+## Stage 1
 
 The simplest way of doing search. We will just ask Swift to give us the range for a matching substring and then highlight it in the text.
 
@@ -55,3 +55,34 @@ This works but has many problems.
 - It gives us only the first match
 
 In order to improve it, we need to normalize it some way. The problem is that after normalizing it, the normalized version may be a different length than the original version. This means that getting a range from the normalized text will no longer match the same word in the original text. So we need a new data structure to keep track of this. 
+
+## Stage 2 (Current Stage)
+
+### The [Trie](https://en.wikipedia.org/wiki/Trie) Data Structure
+
+This is a basic data structure that is great for string searching algorithms. For example, if you are building an autocomplete algorithm, you probably want to use Tries.
+
+``` swift
+class Node {
+    var value: T // Character
+    var markers: Set<U> // Set of Ranges
+    private(set) var children: [T:Node] = [:]
+    init(value: T) {
+        self.value = value
+        self.markers = []
+    }
+    subscript(char: T) -> Node? {
+        get { return self.children[char] }
+        set { self.children[char] = newValue }
+    }
+}
+```
+Normally a `BOOL` or a special character is used, as a marker, to indicate the end of a word. But in this case I'm using a `Set<U>` so that we can use any type to indicate the end of a word. In our app we will use `Swift.Range<String.Index>` so that we can keep track of where in the original string our word was that is represented by this word in the trie.
+
+Also the Trie I implented is totally generic. So its API is not ideal for Strings. I wrote a little wrapper called `StringRangeTrie` that improves the API for Strings while still maintains a totally flexible Trie data structure for other uses.
+
+Lets take a look at the implementations to together. Specifically inserting and retrieving words. Insertion is fairly simple, but retrieving words is a little trickier. Especially because this is an "autocomplete" style search where we want to dive past the input given by the user and see all possible options that match the given query prefix.
+
+Also, right now we have a problem. We need to break up our original strings into words so we can feed the Trie structure. This is where we get into the exciting world of NLP. We'll do that next.
+
+

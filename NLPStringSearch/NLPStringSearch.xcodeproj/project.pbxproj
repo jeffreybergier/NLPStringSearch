@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5026CBC6246001BA00FEDFCF /* SampleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026CBC5246001BA00FEDFCF /* SampleText.swift */; };
+		5026CBC824613A2900FEDFCF /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026CBC724613A2900FEDFCF /* Trie.swift */; };
+		5026CBC924613A2F00FEDFCF /* TrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E275245E4E5A009BDA52 /* TrieTests.swift */; };
+		5026CBCB24613E2300FEDFCF /* StringRangeTrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026CBCA24613E2300FEDFCF /* StringRangeTrie.swift */; };
 		5034E254245D1B76009BDA52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E253245D1B76009BDA52 /* AppDelegate.swift */; };
 		5034E256245D1B7E009BDA52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5034E255245D1B7E009BDA52 /* Assets.xcassets */; };
 		5034E259245D1B7E009BDA52 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5034E257245D1B7E009BDA52 /* MainMenu.xib */; };
@@ -27,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		5026CBC5246001BA00FEDFCF /* SampleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleText.swift; sourceTree = "<group>"; };
+		5026CBC724613A2900FEDFCF /* Trie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
+		5026CBCA24613E2300FEDFCF /* StringRangeTrie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringRangeTrie.swift; sourceTree = "<group>"; };
 		5034E250245D1B76009BDA52 /* NLPStringSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NLPStringSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5034E253245D1B76009BDA52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5034E255245D1B7E009BDA52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +90,8 @@
 				5034E253245D1B76009BDA52 /* AppDelegate.swift */,
 				5034E280245E98D1009BDA52 /* SearchWindowController.swift */,
 				5026CBC5246001BA00FEDFCF /* SampleText.swift */,
+				5026CBC724613A2900FEDFCF /* Trie.swift */,
+				5026CBCA24613E2300FEDFCF /* StringRangeTrie.swift */,
 				5034E255245D1B7E009BDA52 /* Assets.xcassets */,
 				5034E257245D1B7E009BDA52 /* MainMenu.xib */,
 				5034E27E245E98B9009BDA52 /* SearchWindow.xib */,
@@ -205,7 +212,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5026CBCB24613E2300FEDFCF /* StringRangeTrie.swift in Sources */,
 				5026CBC6246001BA00FEDFCF /* SampleText.swift in Sources */,
+				5026CBC824613A2900FEDFCF /* Trie.swift in Sources */,
 				5034E254245D1B76009BDA52 /* AppDelegate.swift in Sources */,
 				5034E281245E98D1009BDA52 /* SearchWindowController.swift in Sources */,
 			);
@@ -215,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5026CBC924613A2F00FEDFCF /* TrieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
