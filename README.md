@@ -56,7 +56,7 @@ This works but has many problems.
 
 In order to improve it, we need to normalize it some way. The problem is that after normalizing it, the normalized version may be a different length than the original version. This means that getting a range from the normalized text will no longer match the same word in the original text. So we need a new data structure to keep track of this. 
 
-## Stage 2 (Current Stage)
+## Stage 2
 
 ### The [Trie](https://en.wikipedia.org/wiki/Trie) Data Structure
 
@@ -85,4 +85,38 @@ Lets take a look at the implementations to together. Specifically inserting and 
 
 Also, right now we have a problem. We need to break up our original strings into words so we can feed the Trie structure. This is where we get into the exciting world of NLP. We'll do that next.
 
+## Stage 3 (Current Stage)
 
+### [Natural Language](https://developer.apple.com/documentation/naturallanguage) Framework and [NLTokenizer](https://developer.apple.com/documentation/naturallanguage/nltokenizer)
+
+This framework is Apple's latest and greatest framework for doing natural language processing. You may remember `NSLinguisticTagger`. That API still works but has been fully replaced by `NLTokenizer` and `NLTagger`.
+
+`NLTokenizer` is going to break up text into words for us. Later we'll use `NLTagger` to do more complex things like get the "lemma" of a word to make our search better.
+
+``` swift
+import NaturalLanguage
+
+enum SearchNormalizer {
+    static func populatedTree(from input: String) -> StringRangeTrie {
+        let trie = StringRangeTrie()
+        let tokenizer = NLTokenizer(unit: .word)
+        tokenizer.string = input
+        tokenizer.enumerateTokens(in: input.startIndex..<input.endIndex)
+        { (range, _) -> Bool in
+            let word = input[range]
+            trie.insert(word, marker: range)
+            return true
+        }
+        return trie
+    }
+}
+```
+Then in our Window Controller class we can update things a little bit. Take a look at the [diff](https://github.com/jeffreybergier/NLPStringSearch/commit/deb838669e82bb017c1e4985ad4c256ab7a416a3). They break down into the following:
+
+1. On Window Load we build a tree of the Searchable Text.
+    1. This is important because this building step is slow with the NLP because we might have a lot of text to process, but once its built, search is super fast because of the trie data structure
+1. When the user searches we build a new trie just with the searched words
+    1. Because the amount of text in the search is small, this is fast.
+1. Then we use feed the `allInsertions` into the `markersFor:` function of the trie to retrieve our results and add color to our attributed string.
+
+Now run the app. This is pretty convincing and it works in Japanese and all other supported languages. However, we still have an issue where we need to normalize our search. Right now, the case, accents, kanji, etc all matter. We want to remove those restrictions.
