@@ -12,7 +12,8 @@ class SearchWindowController: NSWindowController {
 
     @IBOutlet private weak var textView: NSTextView!
 
-    var searchedText: String = ""
+    var searchedTextTrie = StringRangeTrie()
+    var searchableTextTrie = StringRangeTrie()
     var searchableText: String { "" }
 
     class func newWC() -> NSWindowController {
@@ -20,12 +21,13 @@ class SearchWindowController: NSWindowController {
     }
 
     override func windowDidLoad() {
+        self.searchableTextTrie = SearchNormalizer.populatedTree(from: self.searchableText)
         super.windowDidLoad()
         self.update()
     }
 
     @IBAction func searchChanged(_ sender: NSSearchField) {
-        self.searchedText = sender.stringValue
+        self.searchedTextTrie = SearchNormalizer.populatedTree(from: sender.stringValue)
         self.update()
     }
 
@@ -41,8 +43,10 @@ class SearchWindowController: NSWindowController {
         defer {
             self.textView.textStorage!.setAttributedString(text)
         }
-        if let range = self.searchableText.range(of: self.searchedText) {
-            text.addAttributes(searchedAttribs, range: NSRange(range, in: self.searchableText))
+        for searchTerm in self.searchedTextTrie.allInsertions {
+            for range in self.searchableTextTrie.markers(for: searchTerm) {
+                text.addAttributes(searchedAttribs, range: NSRange(range, in: self.searchableText))
+            }
         }
     }
 }
