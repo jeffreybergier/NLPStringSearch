@@ -21,13 +21,11 @@ class SearchWindowController: NSWindowController {
     }
 
     override func windowDidLoad() {
-        self.searchableTextTrie = SearchNormalizer.populatedTree(from: self.searchableText)
         super.windowDidLoad()
         self.update()
     }
 
     @IBAction func searchChanged(_ sender: NSSearchField) {
-        self.searchedTextTrie = SearchNormalizer.populatedTree(from: sender.stringValue)
         self.update()
     }
 
@@ -60,12 +58,14 @@ class JapaneseSearchWindowController: SearchWindowController {
     }
 
     override func windowDidLoad() {
+        self.searchableTextTrie = SearchNormalizer.ja_populatedTree(from: self.searchableText)
         super.windowDidLoad()
         self.window!.title = "日本語"
         self.window!.identifier = NSUserInterfaceItemIdentifier(rawValue: "日本語")
     }
 
     override func searchChanged(_ sender: NSSearchField) {
+        self.searchedTextTrie = SearchNormalizer.ja_populatedTree(from: sender.stringValue)
         super.searchChanged(sender)
     }
 }
@@ -79,12 +79,14 @@ class LatinSearchWindowController: SearchWindowController {
     }
 
     override func windowDidLoad() {
+        self.searchableTextTrie = SearchNormalizer.populatedTree(from: self.searchableText)
         super.windowDidLoad()
         self.window!.title = "Latin"
         self.window!.identifier = NSUserInterfaceItemIdentifier(rawValue: "Latin")
     }
 
     override func searchChanged(_ sender: NSSearchField) {
+        self.searchedTextTrie = SearchNormalizer.populatedTree(from: sender.stringValue)
         super.searchChanged(sender)
     }
 }

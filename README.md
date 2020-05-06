@@ -121,7 +121,7 @@ Then in our Window Controller class we can update things a little bit. Take a lo
 
 Now run the app. This is pretty convincing and it works in Japanese and all other supported languages. However, we still have an issue where we need to normalize our search. Right now, the case, accents, kanji, etc all matter. We want to remove those restrictions.
 
-## Stage 4 (Current Stage)
+## Stage 4
 
 In our previous stage we had search working but it was too restrictive. We had found the words in our text but we had not normalized everything into a regular form that made searching "fuzzier." Some examples of normalization below:
 
@@ -152,3 +152,41 @@ enum SearchNormalizer {
 
 Now this doesn't solve the hardest problem we have with Japanese, romanization. Right now, to search in Japanese we have to type the exact correct kanjis and other characters. I originally thought that the `.toLatin` transform above would transform Japanese but it seems to interpret the kanjis as Chinese characters and convert to a Chinese romanization which is not helpful. To do it in Japanese, I had to switch to older ways of tokenizing... all the way back to Core Foundation. So lets do it.
     
+## Stage 5 (Current Stage)
+
+Unfortunately there are no new API's from Apple that allow us to Romanize Japanese text. Also, the feature of iOS that does the romanization also does the tokenization. So for Japanese we end up not using the Natural Language framework at all. Basically we're going to use Core Foundation API's to tokenize and romanize the words in Japanese all at once. Sorry, this is a lot of code, but its doing essentially the same thing as before but with an older API.
+
+``` swift
+enum SearchNormalizer {
+    static func ja_populatedTree(from _input: String) -> StringRangeTrie {
+        let input = _input as NSString
+        let locale = CFLocaleCreate(kCFAllocatorDefault,
+                                    CFLocaleIdentifier("ja_JP" as CFString))!
+        let tokenizer = CFStringTokenizerCreate(kCFAllocatorDefault,
+                                                input as CFString,
+                                                CFRange(location: 0, length: input.length),
+                                                kCFStringTokenizerUnitWord,
+                                                locale)
+        let trie = StringRangeTrie()
+        var tokenType = CFStringTokenizerGoToTokenAtIndex(tokenizer, 0)
+        while tokenType.rawValue != 0 {
+            defer {
+                tokenType = CFStringTokenizerAdvanceToNextToken(tokenizer)
+            }
+            let cfRange = CFStringTokenizerGetCurrentTokenRange(tokenizer)
+            let objcRange = NSRange(location: cfRange.location, length: cfRange.length)
+            // this can be NIL for complex Emojis and other characters
+            guard let swiftRange = Range(objcRange, in: _input) else { continue }
+            let original = input.substring(with: objcRange)
+            let romanized = CFStringTokenizerCopyCurrentTokenAttribute(tokenizer, kCFStringTokenizerAttributeLatinTranscription) as? String
+            trie.insert(self.normalize(original), marker: swiftRange)
+            if let romanized = romanized {
+                trie.insert(self.normalize(romanized), marker: swiftRange)
+            }
+        }
+        return trie
+    }
+}
+```
+
+Note that I inserted both the original term and the romanized term into the trie in this one. One of the coolest things about the trie is it hides all the complexity from the user. As long as we think the search term is related, we can insert it into the trie and use it to help the user find things. Now in this case, this search might almost be too flexible. Returning erroneous results. For example I searched 天 (ten) (heaven) and it matches テニス (tenisu) (tennis). The amount of flexibility depends on our implementation. We can turn it up and down by modifying our normalization techniques.
