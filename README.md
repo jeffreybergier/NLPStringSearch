@@ -152,7 +152,7 @@ enum SearchNormalizer {
 
 Now this doesn't solve the hardest problem we have with Japanese, romanization. Right now, to search in Japanese we have to type the exact correct kanjis and other characters. I originally thought that the `.toLatin` transform above would transform Japanese but it seems to interpret the kanjis as Chinese characters and convert to a Chinese romanization which is not helpful. To do it in Japanese, I had to switch to older ways of tokenizing... all the way back to Core Foundation. So lets do it.
     
-## Stage 5 (Current Stage)
+## Stage 5
 
 Unfortunately there are no new API's from Apple that allow us to Romanize Japanese text. Also, the feature of iOS that does the romanization also does the tokenization. So for Japanese we end up not using the Natural Language framework at all. Basically we're going to use Core Foundation API's to tokenize and romanize the words in Japanese all at once. Sorry, this is a lot of code, but its doing essentially the same thing as before but with an older API.
 
@@ -190,3 +190,32 @@ enum SearchNormalizer {
 ```
 
 Note that I inserted both the original term and the romanized term into the trie in this one. One of the coolest things about the trie is it hides all the complexity from the user. As long as we think the search term is related, we can insert it into the trie and use it to help the user find things. Now in this case, this search might almost be too flexible. Returning erroneous results. For example I searched 天 (ten) (heaven) and it matches テニス (tenisu) (tennis). The amount of flexibility depends on our implementation. We can turn it up and down by modifying our normalization techniques.
+
+## Stage 6 (Current Stage)
+
+### Future Improvements
+
+#### 1) Better Support for Multi-word searches
+Right now, when a search has multiple words, the search is performed individually for each word. It would be better to verify that ranges that were returned for the second were ocurred right after or shortly after the ranges returned for the first word. That way add words to a search would make it more accurate, not less.
+
+#### 2) Add Lemmas
+This can help search immensly. The Natural Language framework has a more advanced class called `NLTagger`. `NLTagger` can tell us all sorts of information about each word as its passed in during the tokenization process. For example, what part of speech is it (nound, verb, etc). It can also tell use the lemma in some languages (not Japanese). The lemma is basically the unconjugated form of a word. For example if the original word was "ran" then the lemma value would be "run" as run is the standard form and ran is the past tense form. We can add these into the trie while doing our processing to make our results more flexible.
+
+#### 3) Embeddings
+The natural language framework has the concept of an embedding with the `NLEmbedding` class. This class gives us words that have a similar meaning to the given word. For example "rain" returns results like "downpour". Apple recommends using these for search suggestions. This is only supported in a few languages right now (not Japanese)
+
+`NLEmbedding` also supports using custom machine learning models. I think this could be a really powerful way to normalize Japanese. Right now we are converting everything into Romaji. This loses all context. In reality many Japanese words only have between 1 and 10 "common" ways of being written. If a custom model was made that mapped words into their common variations, then the search would make a lot more sense and have more relevance for a native speaker.
+
+#### 4) Third Party Libraries
+There is a commonly used library called `mecab` that has better support for Japanese than iOS currently has. It supports lemmas and other things that Apple doesn't support right now. To get more advanced features, it might be worth looking at this library. I haven't personally used [this iOS wrapper](https://github.com/shirakaba/iPhone-libmecab) but it comes up often in research.
+
+## References
+
+Most of this knowledge I gained while writing Japanese supported search for my employer. However, in the process of making this workshop I did more reserch and I found these resources to be the most helpful:
+
+- [The Challenges of Intelligent Japanese Searching 知的日本語検索の諸課題 by Jack Halpern](http://www.cjk.org/cjk/joa/joapaper.htm)
+- [Looking up non-dictionary form words in thirty languages by Jamie Birch](https://birchlabs.co.uk/blog/jamie/linguabrowse/2018/03/10/looking-up-words-in-thirty-languages.html)
+
+
+
+
