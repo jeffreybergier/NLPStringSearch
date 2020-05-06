@@ -85,7 +85,7 @@ Lets take a look at the implementations to together. Specifically inserting and 
 
 Also, right now we have a problem. We need to break up our original strings into words so we can feed the Trie structure. This is where we get into the exciting world of NLP. We'll do that next.
 
-## Stage 3 (Current Stage)
+## Stage 3
 
 ### [Natural Language](https://developer.apple.com/documentation/naturallanguage) Framework and [NLTokenizer](https://developer.apple.com/documentation/naturallanguage/nltokenizer)
 
@@ -120,3 +120,35 @@ Then in our Window Controller class we can update things a little bit. Take a lo
 1. Then we use feed the `allInsertions` into the `markersFor:` function of the trie to retrieve our results and add color to our attributed string.
 
 Now run the app. This is pretty convincing and it works in Japanese and all other supported languages. However, we still have an issue where we need to normalize our search. Right now, the case, accents, kanji, etc all matter. We want to remove those restrictions.
+
+## Stage 4 (Current Stage)
+
+In our previous stage we had search working but it was too restrictive. We had found the words in our text but we had not normalized everything into a regular form that made searching "fuzzier." Some examples of normalization below:
+
+- Case
+    - Tom Cruise → tom cruise
+- Diacritic Marks
+    - Café → Cafe
+    - die Löwen → die Lowen / die Loewen
+- Japanese Romanization
+    - 関西 → kansai
+    - エレベーター → erebētā
+- Kana Width
+    - ｶﾀｶﾅ → カタカナ
+    
+    Its important to remember that these are not translations and they are not even "correct." We won't show this to the user. This is just an internal representation for our algorithms. It makes searching more flexible for the user. The important thing isn't accuracy, its that we run both the Search term and the Searchable text through the same normalization algorithm. Thats one reason we use the same `SearchNormalizer` function for both sets of text.
+    
+``` swift
+enum SearchNormalizer {
+    private static func normalize<S: StringProtocol>(_ input: S) -> String {
+        return input
+            .lowercased()
+            .trimmingCharacters(in: .punctuationCharacters)
+            .applyingTransform(.stripDiacritics, reverse: false)!
+            .applyingTransform(.fullwidthToHalfwidth, reverse: true)!
+    }
+}
+```
+
+Now this doesn't solve the hardest problem we have with Japanese, romanization. Right now, to search in Japanese we have to type the exact correct kanjis and other characters. I originally thought that the `.toLatin` transform above would transform Japanese but it seems to interpret the kanjis as Chinese characters and convert to a Chinese romanization which is not helpful. To do it in Japanese, I had to switch to older ways of tokenizing... all the way back to Core Foundation. So lets do it.
+    
