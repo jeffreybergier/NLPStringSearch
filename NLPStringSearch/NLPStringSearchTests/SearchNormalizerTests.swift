@@ -23,14 +23,14 @@ class EnglishNormalizerTests: XCTestCase {
         "It was a tough old moment, I won't deny it," he's quoted as saying, adding that he kept asking himself: "How am I going to get out of this?"
         """
 
-    lazy var trie: StringRangeTrie = SearchNormalizer.latin(text: inputString)
+    lazy var trie: StringRangeTrie = SearchNormalizer.populatedTree(from: inputString)
 
     func test_search() {
         _ = {
-            XCTAssertEqual(self.trie.allInsertions.count, 185)
+            XCTAssertEqual(self.trie.allInsertions.count, 181)
             XCTAssertEqual(self.trie.allInsertions[0], "boris")
-            XCTAssertEqual(self.trie.allInsertions[52], "driven")
-            XCTAssertEqual(self.trie.allInsertions[101], "while")
+            XCTAssertEqual(self.trie.allInsertions[48], "hospital")
+            XCTAssertEqual(self.trie.allInsertions[99], "johnson")
         }()
         _ = {
             let search = self.trie.markers(for: "boris")
@@ -62,14 +62,17 @@ class JapaneseNormalizerTests: XCTestCase {
         関西電力では、定期検査の開始時期については、今後、作業を請け負う協力会社などと調整したうえで決めるとしています。
         """
 
-    lazy var trie: StringRangeTrie = SearchNormalizer.japanese(text: inputString)
+    lazy var trie: StringRangeTrie = SearchNormalizer.ja_populatedTree(from: inputString)
 
     func test_search() {
         _ = {
-            XCTAssertEqual(self.trie.allInsertions.count, 223)
-            XCTAssertEqual(self.trie.allInsertions[0], "kansai")
-            XCTAssertEqual(self.trie.allInsertions[50], "suru")
-            XCTAssertEqual(self.trie.allInsertions[102], "sugimoto")
+            XCTAssertEqual(self.trie.allInsertions.count, 446)
+            XCTAssertEqual(self.trie.allInsertions[0], "関西")
+            XCTAssertEqual(self.trie.allInsertions[1], "kansai")
+            XCTAssertEqual(self.trie.allInsertions[100], "する")
+            XCTAssertEqual(self.trie.allInsertions[101], "suru")
+            XCTAssertEqual(self.trie.allInsertions[204], "杉本")
+            XCTAssertEqual(self.trie.allInsertions[205], "sugimoto")
         }()
         _ = {
             let search = self.trie.markers(for: "kansai")

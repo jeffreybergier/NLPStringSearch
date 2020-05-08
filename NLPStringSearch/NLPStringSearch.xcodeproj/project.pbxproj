@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482FE3342465536D00DD83BD /* SearchNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E27B245E70B9009BDA52 /* SearchNormalizerTests.swift */; };
 		5026CBC6246001BA00FEDFCF /* SampleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026CBC5246001BA00FEDFCF /* SampleText.swift */; };
 		5026CBC824613A2900FEDFCF /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026CBC724613A2900FEDFCF /* Trie.swift */; };
 		5026CBC924613A2F00FEDFCF /* TrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034E275245E4E5A009BDA52 /* TrieTests.swift */; };
@@ -228,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482FE3342465536D00DD83BD /* SearchNormalizerTests.swift in Sources */,
 				5026CBC924613A2F00FEDFCF /* TrieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +416,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V6ESYGU6CV;
@@ -436,6 +439,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V6ESYGU6CV;

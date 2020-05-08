@@ -44,7 +44,6 @@ enum SearchNormalizer {
             .lowercased()
             .trimmingCharacters(in: .punctuationCharacters)
             .applyingTransform(.stripDiacritics, reverse: false)!
-            .applyingTransform(.fullwidthToHalfwidth, reverse: true)!
     }
 
     static func populatedTree(from input: String) -> StringRangeTrie {
