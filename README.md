@@ -17,7 +17,7 @@ Use `git reset --hard HASH` to reset your repo in each stage if needed
 - [Stage 3 `6050f5`](https://github.com/jeffreybergier/NLPStringSearch/tree/6050f5430630617f3d2c1496aac4cc1abc214c6b)
 - [Stage 4 `eb01b6`](https://github.com/jeffreybergier/NLPStringSearch/tree/eb01b6648fc3d2ac51103ea841b0b07fff00b7c6)
 - [Stage 5 `bcd3fd`](https://github.com/jeffreybergier/NLPStringSearch/tree/bcd3fd51dc39b7a8c0bc4a94d57c26d164cfaa46)
-- [Stage 6 `942770`](https://github.com/jeffreybergier/NLPStringSearch/tree/942770d18b7a11b5c56b18c320e67bac16341cb2)
+- [Stage 6 `648ca6`](https://github.com/jeffreybergier/NLPStringSearch/tree/648ca6d62e47ebbba42221305ba0ac0319e7e512)
 
 ## References
 
